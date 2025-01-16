@@ -5,6 +5,7 @@ import com.demo.pages.Pages;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Epic("Test Epic")
@@ -21,7 +22,7 @@ public class FirstTest extends BaseTest {
 
         Pages.googlePage().clickSearch();
 
-        Pages.googlePage().checkIfVisible();
+        Assert.assertTrue(Pages.googlePage().isSearchResultsDisplayed(), "Результаты поиска не отображены!");
 
         System.out.println("The end of the GoogleSearchTest");
     }

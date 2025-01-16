@@ -44,7 +44,7 @@ public class GoogleSearchPage extends PageTools {
     }
 
     @Step("Checking if the results is visible")
-    public void checkIfVisible(){
-        shouldBe(visible,By.id("#search"));
+    public boolean isSearchResultsDisplayed(){
+        return getSelenideElement(By.id("#search")).isDisplayed();
     }
 }
